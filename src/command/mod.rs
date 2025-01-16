@@ -103,6 +103,14 @@ impl RoaringCommand {
                 Ok((rb, span, pipeline_metadata))
             }
 
+            PipelineData::Value(Value::Binary { val, internal_span }, pipeline_metadata) => {
+                let rb = RoaringBitmap::deserialize_from(val.as_slice()).map_err(|e| {
+                    LabeledError::new(e.to_string())
+                        .with_label("Failed to deserialize Roaring Bitmap", internal_span)
+                })?;
+                Ok((rb, internal_span, pipeline_metadata))
+            }
+
             PipelineData::Value(Value::Custom { val, internal_span }, pipeline_metadata) => {
                 if let Some(custom_value) = val.as_any().downcast_ref::<RoaringCustomValue>() {
                     Ok((custom_value.rb.clone(), internal_span, pipeline_metadata))
