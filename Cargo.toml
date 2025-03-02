@@ -1,6 +1,6 @@
 [package]
 name = "nu_plugin_roaring"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["yybit <yybit2@gmail.com>"]
 license = "Apache-2.0"
@@ -12,9 +12,9 @@ include = ["**/*.rs", "Cargo.toml"]
 keywords = ["nu", "plugin", "roaring", "bitmap"]
 
 [dependencies]
-nu-plugin = "0.101.0"
-nu-protocol = { version = "0.101.0", features = ["plugin"] }
+nu-plugin = "0.102.0"
+nu-protocol = { version = "0.102.0", features = ["plugin"] }
 
-serde = { version = "1.0", features = ["derive"] }
-typetag = "0.2.19"
-roaring = { version = "0.10.9", features = ["serde"] }
+serde = { version = "1.0.218", features = ["derive"] }
+typetag = "0.2.20"
+roaring = { version = "0.10.10", features = ["serde"] }
