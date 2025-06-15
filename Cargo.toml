@@ -1,6 +1,6 @@
 [package]
 name = "nu_plugin_roaring"
-version = "0.1.4"
+version = "0.1.5"
 edition = "2021"
 authors = ["yybit <yybit2@gmail.com>"]
 license = "Apache-2.0"
@@ -12,8 +12,8 @@ include = ["**/*.rs", "Cargo.toml"]
 keywords = ["nu", "plugin", "roaring", "bitmap"]
 
 [dependencies]
-nu-plugin = "0.104.1"
-nu-protocol = { version = "0.104.1", features = ["plugin"] }
+nu-plugin = "0.105.1"
+nu-protocol = { version = "0.105.1", features = ["plugin"] }
 
 serde = { version = "1.0.219", features = ["derive"] }
 typetag = "0.2.20"
